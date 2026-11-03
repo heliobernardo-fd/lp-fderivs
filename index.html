@@ -7,19 +7,19 @@
   <meta name="description" content="Plataforma completa para gestão de derivativos e produtos estruturados que atende aos maiores bancos, corretoras e gestoras do Brasil.">
   <link rel="icon" type="image/jpeg" href="assets/images/ico-fderivs-100x100.jpg">
 
-  <!-- Google Fonts: Inter e Roboto exatamente como no WordPress original -->
+  <!-- Tipografia Oficial: Inter e Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="fderivs-wp-clone">
+<body>
 
   <!-- ========================================================
-       TOP HEADER / NAVBAR (ESTILO ELEMENTOR ORIGINAL 1:1)
+       HEADER / NAVEGAÇÃO PRINCIPAL
        ======================================================== -->
-  <header class="wp-header" id="header">
+  <header class="site-header" id="header">
     <div class="header-inner container-fluid">
       
       <!-- Coluna 1: Logo Oficial com altura de 68px -->
@@ -88,7 +88,7 @@
   <!-- ========================================================
        HERO SECTION (COM BG-FDERIVS-1.JPG & EFEITO BLUE-TEXT)
        ======================================================== -->
-  <section class="wp-hero" id="hero">
+  <section class="hero-section" id="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-layout">
       <div class="hero-text-col">
@@ -105,269 +105,253 @@
         </div>
 
         <div class="hero-actions">
-          <a href="#app" class="btn-elementor btn-cyan">SAIBA MAIS SOBRE NOSSA PLATAFORMA</a>
-          <a href="#contato" class="btn-elementor btn-transparent">FALE COM UM ESPECIALISTA</a>
+          <a href="#app" class="btn-cta btn-cyan">SAIBA MAIS SOBRE NOSSA PLATAFORMA</a>
+          <a href="#contato" class="btn-cta btn-transparent">FALE COM UM ESPECIALISTA</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       BARRA DE NAVEGAÇÃO DOS 4 MÓDULOS (APPRECIATOR, POLY, INST, RISK)
+       SEÇÃO DOS 4 MÓDULOS INTEGRADOS (TABS INTERATIVAS COM TRANSIÇÃO 1:1)
        ======================================================== -->
-  <section class="modules-quickbar" id="app">
-    <div class="container">
-      <div class="modules-quickbar-grid">
+  <section class="modules-interactive-section" id="app">
+    
+    <!-- Camada de Background Dinâmico com Fade to Black -->
+    <div class="dynamic-bg-container">
+      <div class="dynamic-bg-layer active" id="bg-appreciator" style="background-image: url('assets/images/appreciator.jpg');"></div>
+      <div class="dynamic-bg-layer" id="bg-polynomial" style="background-image: url('assets/images/poly-img2.webp');"></div>
+      <div class="dynamic-bg-layer" id="bg-instruments" style="background-image: url('assets/images/inst-img0.webp');"></div>
+      <div class="dynamic-bg-layer" id="bg-risk" style="background-image: url('assets/images/risk-img3.webp');"></div>
+      <div class="bg-gradient-overlay"></div>
+    </div>
+
+    <div class="container relative-z">
+      
+      <!-- 4 Cards Superiores das Tabs -->
+      <div class="modules-tabs-row">
         
-        <!-- Appreciator Tab -->
-        <a href="#mod-appreciator" class="module-tab-card active">
-          <div class="tab-icon">
-            <img src="assets/images/appreciator.png" alt="Appreciator" width="46">
+        <!-- Tab 1: Appreciator (Laranja) -->
+        <div class="module-tab-card tab-appreciator active" onclick="switchProductTab('appreciator', true)">
+          <div class="tab-icon-box">
+            <img src="assets/images/appreciator.png" alt="Appreciator" class="tab-app-icon">
           </div>
-          <div class="tab-info">
-            <h3>Appreciator</h3>
-            <p>Simule, precifique e analise derivativos com modelos matemáticos e gráficos dinâmicos.</p>
-          </div>
-        </a>
+          <h3 class="tab-card-title">Appreciator</h3>
+          <p class="tab-card-desc"><b>Simule, precifique e analise derivativos</b> com modelos matemáticos e gráficos dinâmicos.</p>
+        </div>
 
-        <!-- Polynomial Tab -->
-        <a href="#mod-polynomial" class="module-tab-card">
-          <div class="tab-icon">
-            <img src="assets/images/polynomial.png" alt="Polynomial" width="46">
+        <!-- Tab 2: Polynomial (Ciano) -->
+        <div class="module-tab-card tab-polynomial" onclick="switchProductTab('polynomial', true)">
+          <div class="tab-icon-box">
+            <img src="assets/images/polynomial.png" alt="Polynomial" class="tab-app-icon">
           </div>
-          <div class="tab-info">
-            <h3>Polynomial</h3>
-            <p>Consolide dados de mercado em curvas de precificação precisas que alimentam toda a plataforma.</p>
-          </div>
-        </a>
+          <h3 class="tab-card-title">Polynomial</h3>
+          <p class="tab-card-desc"><b>Consolide dados de mercado</b> em curvas de precificação precisas que alimentam toda a plataforma.</p>
+        </div>
 
-        <!-- Instruments Tab -->
-        <a href="#mod-instruments" class="module-tab-card">
-          <div class="tab-icon">
-            <img src="assets/images/Instruments.png" alt="Instruments" width="46">
+        <!-- Tab 3: Instruments (Verde) -->
+        <div class="module-tab-card tab-instruments" onclick="switchProductTab('instruments', true)">
+          <div class="tab-icon-box">
+            <img src="assets/images/Instruments.png" alt="Instruments" class="tab-app-icon">
           </div>
-          <div class="tab-info">
-            <h3>Instruments</h3>
-            <p>Organize sua carteira em books, consolide operações e monitore o histórico de seus ativos.</p>
-          </div>
-        </a>
+          <h3 class="tab-card-title">Instruments</h3>
+          <p class="tab-card-desc"><b>Organize sua carteira em books</b>, consolide operações e monitore o histórico de seus ativos.</p>
+        </div>
 
-        <!-- Risk Manager Tab -->
-        <a href="#mod-risk" class="module-tab-card">
-          <div class="tab-icon">
-            <img src="assets/images/risk-manager.png" alt="Risk Manager" width="46">
+        <!-- Tab 4: Risk Manager (Roxo) -->
+        <div class="module-tab-card tab-risk" onclick="switchProductTab('risk', true)">
+          <div class="tab-icon-box">
+            <img src="assets/images/risk-manager.png" alt="Risk Manager" class="tab-app-icon">
           </div>
-          <div class="tab-info">
-            <h3>Risk Manager</h3>
-            <p>Simule cenários futuros e aplique testes de estresse para proteger sua carteira de riscos.</p>
-          </div>
-        </a>
+          <h3 class="tab-card-title">Risk Manager</h3>
+          <p class="tab-card-desc"><b>Simule cenários futuros e aplique testes de estresse</b> para proteger sua carteira de riscos.</p>
+        </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ========================================================
-       SEÇÃO 1: APPRECIATOR (DETALHADO COM VÍDEO E MINIATURAS)
-       ======================================================== -->
-  <section class="module-deep-section" id="mod-appreciator">
-    <div class="container split-module-row">
-      <!-- Coluna Visual / Vídeo Preview -->
-      <div class="module-media-col">
-        <div class="video-preview-wrapper">
-          <a href="https://www.youtube.com/watch?v=zSTv2MpNXwU" target="_blank" rel="noopener" class="video-link-lightbox">
-            <img src="assets/images/app-video-peview-2.jpg" alt="Vídeo de Apresentação do Appreciator" class="preview-img">
-            <div class="play-btn-circle">
-              <span class="play-triangle"></span>
+      <!-- PAINÉIS DE CONTEÚDO DE CADA MÓDULO (ALTERNADOS PELAS TABS) -->
+      <div class="module-panels-container">
+        
+        <!-- Painel 1: Appreciator (Ativo por Padrão) -->
+        <div class="product-panel active" id="panel-appreciator">
+          <div class="panel-split-layout">
+            <!-- Coluna Esquerda: Texto -->
+            <div class="panel-text-card theme-orange">
+              <div class="panel-icon-badge">
+                <img src="assets/images/appreciator.png" alt="Appreciator" width="60">
+              </div>
+              <h4 class="panel-sub-label">Appreciator</h4>
+              <h2 class="panel-main-title">Simplificando a Precificação de Derivativos Financeiros.</h2>
+              <p class="panel-description">
+                O <strong>Appreciator</strong> foi projetado para simplificar a complexa tarefa de configurar dados contratuais e precificar derivativos financeiros. Utilize modelos matemáticos sofisticados para simular ativos, construa gráficos para múltiplos vencimentos e aprofunde a análise de suas estratégias de forma intuitiva e eficiente.
+              </p>
+              <div class="panel-btn-wrap">
+                <a href="#contato" class="btn-product-cta btn-orange">SOLICITE O CONTATO DE UM ESPECIALISTA</a>
+              </div>
             </div>
-            <span class="video-caption-label">Vídeo de Apresentação do Appreciator</span>
-          </a>
-        </div>
 
-        <!-- Carrossel de 7 Miniaturas do Appreciator -->
-        <div class="thumbnail-strip" data-strip="app">
-          <img src="assets/images/app-img1.webp" alt="Appreciator tela 1" class="thumb-pic active" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img2.webp" alt="Appreciator tela 2" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img3.webp" alt="Appreciator tela 3" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img4.webp" alt="Appreciator tela 4" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img5.webp" alt="Appreciator tela 5" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img6.webp" alt="Appreciator tela 6" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-          <img src="assets/images/app-img7.webp" alt="Appreciator tela 7" class="thumb-pic" onclick="swapPreview('mod-appreciator', this.src)">
-        </div>
-      </div>
+            <!-- Coluna Direita: Vídeo Modal Vimeo + Miniaturas -->
+            <div class="panel-media-card">
+              <h5 class="panel-video-caption">Vídeo de Apresentação do Appreciator</h5>
+              <div class="video-thumbnail-box" onclick="openVimeoModal('https://player.vimeo.com/video/888646761?color=F37735&autoplay=1')">
+                <img src="assets/images/app-video-peview-2.jpg" alt="Vídeo Appreciator" class="video-cover-img" id="cover-appreciator">
+                <div class="vimeo-play-button orange-glow">
+                  <span class="vimeo-play-icon">▶</span>
+                </div>
+              </div>
 
-      <!-- Coluna Texto -->
-      <div class="module-text-col">
-        <div class="module-header-badge">
-          <img src="assets/images/appreciator.png" alt="Appreciator" width="34">
-          <span class="badge-title">Appreciator</span>
-        </div>
-
-        <h2 class="module-headline">
-          <span class="blue-text">Simplificando a Precificação de Derivativos Financeiros.</span>
-        </h2>
-
-        <p class="module-copy">
-          O <strong>Appreciator</strong> foi projetado para simplificar a complexa tarefa de configurar dados contratuais e precificar derivativos financeiros. Utilize modelos matemáticos sofisticados para simular ativos, construa gráficos para múltiplos vencimentos e aprofunde a análise de suas estratégias de forma intuitiva e eficiente.
-        </p>
-
-        <div class="module-cta-area">
-          <a href="#contato" class="btn-elementor btn-cyan">Solicite o contato de um especialista</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO 2: POLYNOMIAL (MOTOR QUANTITATIVO)
-       ======================================================== -->
-  <section class="module-deep-section alt-bg" id="mod-polynomial">
-    <div class="container split-module-row reverse">
-      <!-- Coluna Texto -->
-      <div class="module-text-col">
-        <div class="module-header-badge">
-          <img src="assets/images/polynomial.png" alt="Polynomial" width="34">
-          <span class="badge-title">Polynomial</span>
-        </div>
-
-        <h2 class="module-headline">
-          <span class="blue-text">Modelos Matemáticos e Análises Estatísticas se Unem.</span>
-        </h2>
-
-        <p class="module-copy">
-          O <strong>Polynomial</strong>, núcleo da plataforma Fderivs, integra modelos matemáticos avançados e análises estatísticas de dados históricos. Ele consolida informações de mercado em curvas de precificação essenciais, assegurando uma base de dados precisa e robusta para modelagem e análise de derivativos.
-        </p>
-
-        <div class="module-cta-area">
-          <a href="#contato" class="btn-elementor btn-cyan">Solicite o contato de um especialista</a>
-        </div>
-      </div>
-
-      <!-- Coluna Visual / Vídeo Preview -->
-      <div class="module-media-col">
-        <div class="video-preview-wrapper">
-          <a href="https://www.youtube.com/watch?v=8CJPorZsifc" target="_blank" rel="noopener" class="video-link-lightbox">
-            <img src="assets/images/poly-video-peview-2.jpg" alt="Vídeo de Apresentação do Polynomial" class="preview-img">
-            <div class="play-btn-circle">
-              <span class="play-triangle"></span>
+              <!-- Faixa com as 7 Miniaturas -->
+              <div class="panel-thumbs-strip">
+                <img src="assets/images/app-img1.webp" alt="Tela 1" class="mini-thumb active" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img2.webp" alt="Tela 2" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img3.webp" alt="Tela 3" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img4.webp" alt="Tela 4" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img5.webp" alt="Tela 5" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img6.webp" alt="Tela 6" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+                <img src="assets/images/app-img7.webp" alt="Tela 7" class="mini-thumb" onclick="swapCoverImage('cover-appreciator', this.src, this)">
+              </div>
             </div>
-            <span class="video-caption-label">Vídeo de Apresentação do Polynomial</span>
-          </a>
+          </div>
         </div>
 
-        <!-- Carrossel de 7 Miniaturas do Polynomial -->
-        <div class="thumbnail-strip" data-strip="poly">
-          <img src="assets/images/poly-img1.webp" alt="Polynomial tela 1" class="thumb-pic active" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img2.webp" alt="Polynomial tela 2" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img3.webp" alt="Polynomial tela 3" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img4.webp" alt="Polynomial tela 4" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img5.webp" alt="Polynomial tela 5" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img6.webp" alt="Polynomial tela 6" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-          <img src="assets/images/poly-img7.webp" alt="Polynomial tela 7" class="thumb-pic" onclick="swapPreview('mod-polynomial', this.src)">
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Painel 2: Polynomial (Layout Invertido) -->
+        <div class="product-panel" id="panel-polynomial">
+          <div class="panel-split-layout reverse">
+            <!-- Coluna Esquerda: Vídeo Modal Vimeo + Miniaturas -->
+            <div class="panel-media-card">
+              <h5 class="panel-video-caption">Vídeo de Apresentação do Polynomial</h5>
+              <div class="video-thumbnail-box" onclick="openVimeoModal('https://player.vimeo.com/video/881663544?color=00AEDB&autoplay=1')">
+                <img src="assets/images/poly-video-peview-2.jpg" alt="Vídeo Polynomial" class="video-cover-img" id="cover-polynomial">
+                <div class="vimeo-play-button cyan-glow">
+                  <span class="vimeo-play-icon">▶</span>
+                </div>
+              </div>
 
-  <!-- ========================================================
-       SEÇÃO 3: INSTRUMENTS (GESTÃO DE CARTEIRA E BOOKS)
-       ======================================================== -->
-  <section class="module-deep-section" id="mod-instruments">
-    <div class="container split-module-row">
-      <!-- Coluna Visual / Vídeo Preview -->
-      <div class="module-media-col">
-        <div class="video-preview-wrapper">
-          <a href="https://www.youtube.com/watch?v=ERIEerPwCHU" target="_blank" rel="noopener" class="video-link-lightbox">
-            <img src="assets/images/inst-video-peview.jpg" alt="Vídeo de Apresentação do Instruments" class="preview-img">
-            <div class="play-btn-circle">
-              <span class="play-triangle"></span>
+              <!-- Faixa com as 7 Miniaturas -->
+              <div class="panel-thumbs-strip">
+                <img src="assets/images/poly-img1.webp" alt="Tela 1" class="mini-thumb active" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img2.webp" alt="Tela 2" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img3.webp" alt="Tela 3" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img4.webp" alt="Tela 4" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img5.webp" alt="Tela 5" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img6.webp" alt="Tela 6" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+                <img src="assets/images/poly-img7.webp" alt="Tela 7" class="mini-thumb" onclick="swapCoverImage('cover-polynomial', this.src, this)">
+              </div>
             </div>
-            <span class="video-caption-label">Vídeo de Apresentação do Instruments</span>
-          </a>
-        </div>
 
-        <!-- Carrossel de 7 Miniaturas do Instruments -->
-        <div class="thumbnail-strip" data-strip="inst">
-          <img src="assets/images/inst-img1.webp" alt="Instruments tela 1" class="thumb-pic active" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst-img2.webp" alt="Instruments tela 2" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst3-img3.webp" alt="Instruments tela 3" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst4-img4.webp" alt="Instruments tela 4" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst-img5.webp" alt="Instruments tela 5" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst-img6.webp" alt="Instruments tela 6" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-          <img src="assets/images/inst-img0-1.webp" alt="Instruments tela 0" class="thumb-pic" onclick="swapPreview('mod-instruments', this.src)">
-        </div>
-      </div>
-
-      <!-- Coluna Texto -->
-      <div class="module-text-col">
-        <div class="module-header-badge">
-          <img src="assets/images/Instruments.png" alt="Instruments" width="34">
-          <span class="badge-title">Instruments</span>
-        </div>
-
-        <h2 class="module-headline">
-          <span class="blue-text">Consolide e Monitore Suas Operações Financeiras.</span>
-        </h2>
-
-        <p class="module-copy">
-          <strong>Instruments</strong> oferece controle total da carteira de investimentos, permitindo criar e organizar <strong>books de operações</strong>, consolidando ativos e derivativos. Acompanhe negociações e construa um histórico preciso para analisar a trajetória e o desempenho de suas estratégias financeiras.
-        </p>
-
-        <div class="module-cta-area">
-          <a href="#contato" class="btn-elementor btn-cyan">Solicite o contato de um especialista</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO 4: RISK MANAGER (TESTES DE ESTRESSE & PREDIÇÃO)
-       ======================================================== -->
-  <section class="module-deep-section alt-bg" id="mod-risk">
-    <div class="container split-module-row reverse">
-      <!-- Coluna Texto -->
-      <div class="module-text-col">
-        <div class="module-header-badge">
-          <img src="assets/images/risk-manager.png" alt="Risk Manager" width="34">
-          <span class="badge-title">Risk Manager</span>
-        </div>
-
-        <h2 class="module-headline">
-          <span class="blue-text">Análise Preditiva e Testes de Estresse para Derivativos.</span>
-        </h2>
-
-        <p class="module-copy">
-          Com o <strong>Risk Manager</strong>, simule o impacto de mudanças nos preços de ativos e curvas de juros em seus resultados, antecipando movimentos de mercado. Crie e aplique testes de estresse personalizados em seu portfólio para uma gestão de riscos eficaz e estratégica.
-        </p>
-
-        <div class="module-cta-area">
-          <a href="#contato" class="btn-elementor btn-cyan">Solicite o contato de um especialista</a>
-        </div>
-      </div>
-
-      <!-- Coluna Visual / Vídeo Preview -->
-      <div class="module-media-col">
-        <div class="video-preview-wrapper">
-          <a href="https://www.youtube.com/watch?v=c7p2MNAo8vk" target="_blank" rel="noopener" class="video-link-lightbox">
-            <img src="assets/images/risk-video-peview.jpg" alt="Vídeo de Apresentação do Risk Manager" class="preview-img">
-            <div class="play-btn-circle">
-              <span class="play-triangle"></span>
+            <!-- Coluna Direita: Texto -->
+            <div class="panel-text-card theme-cyan">
+              <div class="panel-icon-badge">
+                <img src="assets/images/polynomial.png" alt="Polynomial" width="60">
+              </div>
+              <h4 class="panel-sub-label">Polynomial</h4>
+              <h2 class="panel-main-title">Modelos Matemáticos e Análises Estatísticas se Unem.</h2>
+              <p class="panel-description">
+                O <strong>Polynomial</strong>, núcleo da plataforma Fderivs, integra modelos matemáticos avançados e análises estatísticas de dados históricos. Ele consolida informações de mercado em curvas de precificação essenciais, assegurando uma base de dados precisa e robusta para modelagem e análise de derivativos.
+              </p>
+              <div class="panel-btn-wrap">
+                <a href="#contato" class="btn-product-cta btn-cyan">SOLICITE O CONTATO DE UM ESPECIALISTA</a>
+              </div>
             </div>
-            <span class="video-caption-label">Vídeo de Apresentação do Risk Manager</span>
-          </a>
+          </div>
         </div>
 
-        <!-- Carrossel de 5 Miniaturas do Risk Manager -->
-        <div class="thumbnail-strip" data-strip="risk">
-          <img src="assets/images/risk-img1.webp" alt="Risk tela 1" class="thumb-pic active" onclick="swapPreview('mod-risk', this.src)">
-          <img src="assets/images/risk-img2.webp" alt="Risk tela 2" class="thumb-pic" onclick="swapPreview('mod-risk', this.src)">
-          <img src="assets/images/risk-img3.webp" alt="Risk tela 3" class="thumb-pic" onclick="swapPreview('mod-risk', this.src)">
-          <img src="assets/images/risk-img4.webp" alt="Risk tela 4" class="thumb-pic" onclick="swapPreview('mod-risk', this.src)">
-          <img src="assets/images/risk-img5.webp" alt="Risk tela 5" class="thumb-pic" onclick="swapPreview('mod-risk', this.src)">
+        <!-- Painel 3: Instruments -->
+        <div class="product-panel" id="panel-instruments">
+          <div class="panel-split-layout">
+            <!-- Coluna Esquerda: Texto -->
+            <div class="panel-text-card theme-green">
+              <div class="panel-icon-badge">
+                <img src="assets/images/Instruments.png" alt="Instruments" width="60">
+              </div>
+              <h4 class="panel-sub-label">Instruments</h4>
+              <h2 class="panel-main-title">Consolide e Monitore Suas Operações Financeiras.</h2>
+              <p class="panel-description">
+                <strong>Instruments</strong> oferece controle total da carteira de investimentos, permitindo criar e organizar <strong>books de operações</strong>, consolidando ativos e derivativos. Acompanhe negociações e construa um histórico preciso para analisar a trajetória e o desempenho de suas estratégias financeiras.
+              </p>
+              <div class="panel-btn-wrap">
+                <a href="#contato" class="btn-product-cta btn-green">SOLICITE O CONTATO DE UM ESPECIALISTA</a>
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Vídeo Modal Vimeo + Miniaturas -->
+            <div class="panel-media-card">
+              <h5 class="panel-video-caption">Vídeo de Apresentação do Instruments</h5>
+              <div class="video-thumbnail-box" onclick="openVimeoModal('https://player.vimeo.com/video/914418943?color=8EBC00&autoplay=1')">
+                <img src="assets/images/inst-video-peview.jpg" alt="Vídeo Instruments" class="video-cover-img" id="cover-instruments">
+                <div class="vimeo-play-button green-glow">
+                  <span class="vimeo-play-icon">▶</span>
+                </div>
+              </div>
+
+              <!-- Faixa com as 7 Miniaturas -->
+              <div class="panel-thumbs-strip">
+                <img src="assets/images/inst-img1.webp" alt="Tela 1" class="mini-thumb active" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst-img2.webp" alt="Tela 2" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst3-img3.webp" alt="Tela 3" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst4-img4.webp" alt="Tela 4" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst-img5.webp" alt="Tela 5" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst-img6.webp" alt="Tela 6" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+                <img src="assets/images/inst-img0-1.webp" alt="Tela 0" class="mini-thumb" onclick="swapCoverImage('cover-instruments', this.src, this)">
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Painel 4: Risk Manager (Layout Invertido) -->
+        <div class="product-panel" id="panel-risk">
+          <div class="panel-split-layout reverse">
+            <!-- Coluna Esquerda: Vídeo Modal Vimeo + Miniaturas -->
+            <div class="panel-media-card">
+              <h5 class="panel-video-caption">Vídeo de Apresentação do Risk Manager</h5>
+              <div class="video-thumbnail-box" onclick="openVimeoModal('https://player.vimeo.com/video/912988612?color=7C4199&autoplay=1')">
+                <img src="assets/images/risk-video-peview.jpg" alt="Vídeo Risk Manager" class="video-cover-img" id="cover-risk">
+                <div class="vimeo-play-button purple-glow">
+                  <span class="vimeo-play-icon">▶</span>
+                </div>
+              </div>
+
+              <!-- Faixa com as 5 Miniaturas -->
+              <div class="panel-thumbs-strip five-items">
+                <img src="assets/images/risk-img1.webp" alt="Tela 1" class="mini-thumb active" onclick="swapCoverImage('cover-risk', this.src, this)">
+                <img src="assets/images/risk-img2.webp" alt="Tela 2" class="mini-thumb" onclick="swapCoverImage('cover-risk', this.src, this)">
+                <img src="assets/images/risk-img3.webp" alt="Tela 3" class="mini-thumb" onclick="swapCoverImage('cover-risk', this.src, this)">
+                <img src="assets/images/risk-img4.webp" alt="Tela 4" class="mini-thumb" onclick="swapCoverImage('cover-risk', this.src, this)">
+                <img src="assets/images/risk-img5.webp" alt="Tela 5" class="mini-thumb" onclick="swapCoverImage('cover-risk', this.src, this)">
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Texto -->
+            <div class="panel-text-card theme-purple">
+              <div class="panel-icon-badge">
+                <img src="assets/images/risk-manager.png" alt="Risk Manager" width="60">
+              </div>
+              <h4 class="panel-sub-label">Risk Manager</h4>
+              <h2 class="panel-main-title">Análise Preditiva e Testes de Estresse para Derivativos.</h2>
+              <p class="panel-description">
+                Com o <strong>Risk Manager</strong>, simule o impacto de mudanças nos preços de ativos e curvas de juros em seus resultados, antecipando movimentos de mercado. Crie e aplique testes de estresse personalizados em seu portfólio para uma gestão de riscos eficaz e estratégica.
+              </p>
+              <div class="panel-btn-wrap">
+                <a href="#contato" class="btn-product-cta btn-purple">SOLICITE O CONTATO DE UM ESPECIALISTA</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
+
+  <!-- MODAL LIGHTBOX PARA OS VÍDEOS DO VIMEO -->
+  <div class="vimeo-modal-backdrop" id="vimeoModal" onclick="closeVimeoModal(event)">
+    <div class="vimeo-modal-content">
+      <button class="vimeo-modal-close" onclick="closeVimeoModal()">&times;</button>
+      <div class="vimeo-iframe-responsive">
+        <iframe id="vimeoIframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================
        BANNER CTA: DESBLOQUEIE O POTENCIAL
@@ -381,7 +365,7 @@
         Nossos especialistas estão prontos para demonstrar como a Fderivs pode otimizar suas operações, gerenciar riscos e impulsionar seus resultados financeiros.
       </p>
       <div class="unlock-cta">
-        <a href="#contato" class="btn-elementor btn-cyan btn-lg">Solicite o contato de um especialista</a>
+        <a href="#contato" class="btn-cta btn-cyan btn-lg">Solicite o contato de um especialista</a>
       </div>
     </div>
   </section>
@@ -403,7 +387,7 @@
             Nosso objetivo é equipar os usuários com as habilidades necessárias para manipular nossos sistemas de forma eficiente e destacar-se no cenário financeiro. Nossos cursos avançados oferecem uma abordagem única, adaptando conceitos acadêmicos aos desafios do mercado financeiro brasileiro. Exploramos temas matemáticos, estatísticos e regulatórios, fundamentados em exemplos derivados de situações do mundo real.
           </p>
           <div class="fdlearn-btn-wrap">
-            <a href="#contato" class="btn-elementor btn-cyan">Fale com um especialista</a>
+            <a href="#contato" class="btn-cta btn-cyan">Fale com um especialista</a>
           </div>
         </div>
 
@@ -417,7 +401,7 @@
             A <strong>FDLearn</strong> nasceu para trazer a você o conhecimento avançado em derivativos e mercado financeiro, antes restrito aos treinamentos presenciais das principais instituições financeiras do país. Reunimos a experiência de especialistas com sólida atuação para oferecer um conteúdo único no Brasil.
           </p>
           <div class="fdlearn-btn-wrap">
-            <a href="https://app.fdlearn.com" target="_blank" rel="noopener" class="btn-elementor btn-cyan">Acesse nossa plataforma EAD</a>
+            <a href="https://app.fdlearn.com" target="_blank" rel="noopener" class="btn-cta btn-cyan">Acesse nossa plataforma EAD</a>
           </div>
         </div>
 
@@ -477,7 +461,7 @@
         </div>
 
         <div class="book-cta-btn">
-          <a href="#contato" class="btn-elementor btn-cyan">ENTRE EM CONTATO</a>
+          <a href="#contato" class="btn-cta btn-cyan">ENTRE EM CONTATO</a>
         </div>
       </div>
 
@@ -513,7 +497,7 @@
       </div>
 
       <div class="consulting-cta">
-        <a href="#contato" class="btn-elementor btn-cyan">FALE COM NOSSOS CONSULTORES</a>
+        <a href="#contato" class="btn-cta btn-cyan">FALE COM NOSSOS CONSULTORES</a>
       </div>
 
     </div>
@@ -530,7 +514,7 @@
       </h2>
       <p class="yt-desc">Inscreva-se em nosso canal e acompanhe análises práticas, aulas especiais e demonstrações das novas versões da plataforma.</p>
       <div class="yt-btn-wrap">
-        <a href="https://www.youtube.com/@Fderivs" target="_blank" rel="noopener" class="btn-elementor btn-red-yt">
+        <a href="https://www.youtube.com/@Fderivs" target="_blank" rel="noopener" class="btn-cta btn-red-yt">
           <span class="yt-play-icon">▶</span> Acessar Canal do YouTube
         </a>
       </div>
@@ -618,9 +602,9 @@
   <!-- ========================================================
        SEÇÃO FALE CONOSCO (FORMULÁRIO E CONTATOS IDÊNTICOS AO WP)
        ======================================================== -->
-  <section class="contact-wp-section" id="contato">
-    <div class="contact-wp-overlay"></div>
-    <div class="container contact-wp-container">
+  <section class="contact-section" id="contato">
+    <div class="contact-overlay"></div>
+    <div class="container contact-container">
       
       <!-- Coluna Esquerda: Informações de Contato -->
       <div class="contact-info-col">
@@ -666,30 +650,30 @@
 
       <!-- Coluna Direita: Formulário de Envio -->
       <div class="contact-form-col">
-        <div class="wp-form-card">
+        <div class="form-card">
           <h3 class="form-card-title">Envie sua mensagem</h3>
 
-          <form id="contactForm" class="wp-ajax-form" novalidate>
+          <form id="contactForm" class="contact-form-element" novalidate>
             <div class="form-field-wrap">
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required class="wp-input">
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required class="form-input">
               <span class="error-msg" id="error-nome"></span>
             </div>
 
             <div class="form-field-wrap">
-              <input type="email" id="email" name="email" placeholder="nome@empresa.com" required class="wp-input">
+              <input type="email" id="email" name="email" placeholder="nome@empresa.com" required class="form-input">
               <span class="error-msg" id="error-email"></span>
             </div>
 
             <div class="form-field-wrap">
-              <input type="text" id="empresa" name="empresa" placeholder="Empresa" class="wp-input">
+              <input type="text" id="empresa" name="empresa" placeholder="Empresa" class="form-input">
             </div>
 
             <div class="form-field-wrap">
-              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Mensagem" required class="wp-textarea"></textarea>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Mensagem" required class="form-textarea"></textarea>
               <span class="error-msg" id="error-mensagem"></span>
             </div>
 
-            <button type="submit" id="submitBtn" class="btn-elementor btn-cyan btn-full">
+            <button type="submit" id="submitBtn" class="btn-cta btn-cyan btn-full">
               <span class="btn-text">Enviar</span>
               <span class="btn-spinner" style="display: none;"></span>
             </button>
@@ -703,9 +687,9 @@
   </section>
 
   <!-- ========================================================
-       FOOTER IDÊNTICO AO WORDPRESS
+       RODAPÉ (FOOTER)
        ======================================================== -->
-  <footer class="wp-footer">
+  <footer class="site-footer">
     <div class="container footer-inner-layout">
       <div class="footer-copy-text">
         Copyright© 2015 - 2026 | Fderivs - Todos os direitos reservados.

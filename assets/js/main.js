@@ -107,23 +107,129 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Troca dinâmica da imagem preview do módulo ao clicar nas miniaturas
+ * Alterna entre as 4 Tabs de Produtos (Appreciator, Polynomial, Instruments, Risk Manager)
  */
-function swapPreview(sectionId, imgSrc) {
-  const section = document.getElementById(sectionId);
-  if (!section) return;
+const PRODUCT_IDS = ['appreciator', 'polynomial', 'instruments', 'risk'];
+let currentProductIndex = 0;
+let productCarouselTimer = null;
 
-  const preview = section.querySelector('.preview-img');
-  if (preview) {
-    preview.src = imgSrc;
+function switchProductTab(productId, isManual = false) {
+  const index = PRODUCT_IDS.indexOf(productId);
+  if (index !== -1) {
+    currentProductIndex = index;
   }
 
-  // Atualizar classe ativa na miniatura
-  const strip = section.querySelector('.thumbnail-strip');
-  if (strip) {
-    strip.querySelectorAll('.thumb-pic').forEach(img => {
-      img.classList.remove('active');
-      if (img.src === imgSrc) img.classList.add('active');
-    });
+  // 1. Alternar classe ativa nos 4 cards de topo
+  const tabs = document.querySelectorAll('.module-tab-card');
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+    if (tab.classList.contains(`tab-${productId}`)) {
+      tab.classList.add('active');
+    }
+  });
+
+  // 2. Alternar background dinâmico com fade to black
+  const bgLayers = document.querySelectorAll('.dynamic-bg-layer');
+  bgLayers.forEach(layer => {
+    layer.classList.remove('active');
+    if (layer.id === `bg-${productId}`) {
+      layer.classList.add('active');
+    }
+  });
+
+  // 3. Alternar painéis de conteúdo
+  const panels = document.querySelectorAll('.product-panel');
+  panels.forEach(panel => {
+    panel.classList.remove('active');
+    if (panel.id === `panel-${productId}`) {
+      panel.classList.add('active');
+    }
+  });
+
+  // Se a troca foi por clique manual, reinicia o temporizador de 5 segundos
+  if (isManual) {
+    resetProductCarouselTimer();
+  }
+}
+
+/**
+ * Rotação automática do Carrossel de Produtos a cada 5 segundos
+ */
+function nextProductTab() {
+  currentProductIndex = (currentProductIndex + 1) % PRODUCT_IDS.length;
+  switchProductTab(PRODUCT_IDS[currentProductIndex], false);
+}
+
+function startProductCarouselTimer() {
+  if (!productCarouselTimer) {
+    productCarouselTimer = setInterval(nextProductTab, 5000);
+  }
+}
+
+function stopProductCarouselTimer() {
+  if (productCarouselTimer) {
+    clearInterval(productCarouselTimer);
+    productCarouselTimer = null;
+  }
+}
+
+function resetProductCarouselTimer() {
+  stopProductCarouselTimer();
+  startProductCarouselTimer();
+}
+
+// Inicializa a rotação automática e adiciona pausa ao passar o mouse na seção
+document.addEventListener('DOMContentLoaded', () => {
+  const moduleSection = document.querySelector('.modules-interactive-section');
+  if (moduleSection) {
+    startProductCarouselTimer();
+
+    // Pausa ao passar o mouse para o usuário poder ler/interagir com calma
+    moduleSection.addEventListener('mouseenter', stopProductCarouselTimer);
+    moduleSection.addEventListener('mouseleave', startProductCarouselTimer);
+  }
+});
+
+/**
+ * Troca da imagem de capa ao clicar nas miniaturas
+ */
+function swapCoverImage(coverId, imgSrc, thumbElement) {
+  const coverImg = document.getElementById(coverId);
+  if (coverImg) {
+    coverImg.src = imgSrc;
+  }
+  const parent = thumbElement.parentElement;
+  if (parent) {
+    parent.querySelectorAll('.mini-thumb').forEach(t => t.classList.remove('active'));
+    thumbElement.classList.add('active');
+  }
+}
+
+/**
+ * Abre o Modal com o Player do Vimeo
+ */
+function openVimeoModal(vimeoEmbedUrl) {
+  const modal = document.getElementById('vimeoModal');
+  const iframe = document.getElementById('vimeoIframe');
+  if (modal && iframe) {
+    iframe.src = vimeoEmbedUrl;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden'; // Trava scroll da página de fundo
+  }
+}
+
+/**
+ * Fecha o Modal do Vimeo e para a reprodução
+ */
+function closeVimeoModal(event) {
+  if (event && event.target && !event.target.classList.contains('vimeo-modal-backdrop') && !event.target.classList.contains('vimeo-modal-close')) {
+    return;
+  }
+  const modal = document.getElementById('vimeoModal');
+  const iframe = document.getElementById('vimeoIframe');
+  if (modal && iframe) {
+    iframe.src = ''; // Limpa para interromper o áudio do vídeo
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
   }
 }

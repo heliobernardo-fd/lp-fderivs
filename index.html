@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FDerivs | Simulação e Gestão de Derivativos de Ações com Precisão</title>
+  <meta name="description" content="Plataforma completa para gestão de derivativos e produtos estruturados que atende aos maiores bancos, corretoras e gestoras do Brasil.">
+  <link rel="icon" type="image/png" href="assets/images/ico-fderivs-100x100.jpg">
+  
+  <!-- Google Fonts Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <span class="badge">Novidade</span>
+      <p>Saiba mais sobre a nova tela de login e módulos da plataforma FDerivs.</p>
+      <a href="#contato" class="top-bar-link">Fale com um especialista &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Navbar Fixa -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand">
+        <img src="assets/images/logo-fderivs-transparent.png" alt="FDerivs Logo" class="brand-logo" height="42">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#plataforma" class="nav-link">Plataforma</a></li>
+          <li><a href="#modulos" class="nav-link">Módulos</a></li>
+          <li><a href="#capacitacao" class="nav-link">Cursos & EAD</a></li>
+          <li><a href="#estruturados" class="nav-link">Produtos Estruturados</a></li>
+          <li><a href="#publicacoes" class="nav-link">Publicações</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="pulse-dot"></span>
+            Tecnologia Quantitativa de Alta Precisão
+          </div>
+          <h1 class="hero-title">
+            Fique por dentro do <span class="gradient-text">valor real</span> de suas carteiras e estruturas.
+          </h1>
+          <p class="hero-subtitle">
+            Plataforma completa para gestão de derivativos e produtos estruturados que atende aos maiores bancos, corretoras e gestoras do Brasil.
+          </p>
+          <p class="hero-desc">
+            Simule e gerencie derivativos de ações com precisão milimétrica, desenvolvimento sob medida e suporte altamente especializado para atender a mesas proprietárias, tesourarias, gestores de fundos e gestores de risco.
+          </p>
+          
+          <div class="hero-cta-group">
+            <a href="#contato" class="btn btn-primary btn-lg">Solicitar Demonstração</a>
+            <a href="#modulos" class="btn btn-outline btn-lg">Explorar Módulos</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">4 Módulos</span>
+              <span class="stat-label">Integrados em Tempo Real</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">Top Tier</span>
+              <span class="stat-label">Bancos & Gestoras atendidas</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Mercado Brasileiro & Global</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glass-mockup">
+            <div class="mockup-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="mockup-title">FDerivs Workspace | Risk & Pricing Engine</span>
+            </div>
+            <div class="mockup-body">
+              <img src="assets/images/sistema-fderivs.webp" alt="Interface FDerivs" class="mockup-img" loading="eager">
+              <div class="floating-badge badge-top">
+                <span class="badge-icon">⚡</span>
+                <div>
+                  <strong>Curvas em Tempo Real</strong>
+                  <small>Polynomial Engine Ativo</small>
+                </div>
+              </div>
+              <div class="floating-badge badge-bottom">
+                <span class="badge-icon">🛡️</span>
+                <div>
+                  <strong>Stress Testing</strong>
+                  <small>Risk Manager Multi-Cenário</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OS 4 PILARES DA PLATAFORMA (NAV TABS DOS MÓDULOS) -->
+    <section class="section platform-overview" id="plataforma">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">A Suíte FDerivs</span>
+          <h2 class="section-title">Quatro módulos robustos. Uma única plataforma integrada.</h2>
+          <p class="section-subtitle">
+            Cada módulo foi desenvolvido para responder com excelência matemática a cada etapa do ciclo de vida de derivativos e produtos estruturados.
+          </p>
+        </div>
+
+        <div class="modules-grid">
+          <!-- Card Appreciator -->
+          <article class="module-card">
+            <div class="card-header">
+              <img src="assets/images/appreciator.png" alt="Appreciator Icon" class="module-logo">
+              <span class="module-badge">Precificação</span>
+            </div>
+            <h3>Appreciator</h3>
+            <p>Simule, precifique e analise derivativos com modelos matemáticos consagrados e gráficos dinâmicos de múltiplos vencimentos.</p>
+            <a href="#modulo-appreciator" class="module-link">Ver detalhes &rarr;</a>
+          </article>
+
+          <!-- Card Polynomial -->
+          <article class="module-card featured">
+            <div class="card-header">
+              <img src="assets/images/polynomial.png" alt="Polynomial Icon" class="module-logo">
+              <span class="module-badge pulse">Núcleo Central</span>
+            </div>
+            <h3>Polynomial</h3>
+            <p>Integra modelos matemáticos avançados e análises estatísticas para consolidar dados de mercado em curvas precisas que alimentam a suíte.</p>
+            <a href="#modulo-polynomial" class="module-link">Ver detalhes &rarr;</a>
+          </article>
+
+          <!-- Card Instruments -->
+          <article class="module-card">
+            <div class="card-header">
+              <img src="assets/images/Instruments.png" alt="Instruments Icon" class="module-logo">
+              <span class="module-badge">Carteira & Books</span>
+            </div>
+            <h3>Instruments</h3>
+            <p>Organize sua carteira em books, consolide operações, acompanhe negociações e monitore o histórico completo de seus ativos.</p>
+            <a href="#modulo-instruments" class="module-link">Ver detalhes &rarr;</a>
+          </article>
+
+          <!-- Card Risk Manager -->
+          <article class="module-card">
+            <div class="card-header">
+              <img src="assets/images/risk-manager.png" alt="Risk Manager Icon" class="module-logo">
+              <span class="module-badge">Gestão de Risco</span>
+            </div>
+            <h3>Risk Manager</h3>
+            <p>Simule cenários futuros, antecipe oscilações de preços e curvas de juros e aplique testes de estresse para proteger seu portfólio.</p>
+            <a href="#modulo-risk" class="module-link">Ver detalhes &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETALHE DOS MÓDULOS -->
+    <section class="section modules-detail" id="modulos">
+      <div class="container">
+        
+        <!-- Bloco 1: Appreciator -->
+        <div class="feature-row" id="modulo-appreciator">
+          <div class="feature-info">
+            <div class="module-chip">
+              <img src="assets/images/appreciator.png" alt="Appreciator" width="28">
+              <span>Módulo de Precificação</span>
+            </div>
+            <h2>Simplificando a Precificação de Derivativos Financeiros.</h2>
+            <p>
+              O <strong>Appreciator</strong> foi projetado para simplificar a complexa tarefa de configurar dados contratuais e precificar derivativos financeiros. Utilize modelos matemáticos sofisticados para simular ativos, construa superfícies de volatilidade e gráficos para múltiplos vencimentos, aprofundando a análise de suas estratégias de forma ágil e intuitiva.
+            </p>
+            <ul class="feature-bullets">
+              <li>Configuração ágil de termos contratuais e estruturas exóticas.</li>
+              <li>Gráficos dinâmicos de sensibilidade (Greeks: Delta, Gamma, Vega, Theta, Rho).</li>
+              <li>Simulação instantânea com parâmetros customizados de mercado.</li>
+            </ul>
+            <div class="feature-cta">
+              <a href="https://www.youtube.com/watch?v=zSTv2MpNXwU" target="_blank" rel="noopener" class="btn btn-outline btn-video">
+                <span class="play-icon">▶</span> Assistir Vídeo do Appreciator
+              </a>
+              <a href="#contato" class="btn btn-primary">Solicitar Apresentação</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="media-card">
+              <img src="assets/images/app-video-peview-2.jpg" alt="Preview Appreciator" class="main-preview">
+              <div class="media-gallery">
+                <img src="assets/images/app-img1.webp" alt="Appreciator tela 1" loading="lazy">
+                <img src="assets/images/app-img2.webp" alt="Appreciator tela 2" loading="lazy">
+                <img src="assets/images/app-img3.webp" alt="Appreciator tela 3" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 2: Polynomial (Invertido) -->
+        <div class="feature-row reverse" id="modulo-polynomial">
+          <div class="feature-info">
+            <div class="module-chip">
+              <img src="assets/images/polynomial.png" alt="Polynomial" width="28">
+              <span>Motor Estatístico & Matemática Pura</span>
+            </div>
+            <h2>Modelos Matemáticos e Análises Estatísticas se Unem.</h2>
+            <p>
+              O <strong>Polynomial</strong> é o núcleo da plataforma FDerivs. Ele integra modelagem quantitativa avançada com rigorosa análise estatística de dados históricos, consolidando as informações brutas do mercado em curvas de precificação contínuas e confiáveis.
+            </p>
+            <ul class="feature-bullets">
+              <li>Construção de curvas de taxa de juros, cupom cambial e volatilidade implícita.</li>
+              <li>Interpolação e extrapolação por splines e modelos paramétricos robustos.</li>
+              <li>Alimentação centralizada de dados para todos os sistemas do ecossistema.</li>
+            </ul>
+            <div class="feature-cta">
+              <a href="https://www.youtube.com/watch?v=8CJPorZsifc" target="_blank" rel="noopener" class="btn btn-outline btn-video">
+                <span class="play-icon">▶</span> Assistir Vídeo do Polynomial
+              </a>
+              <a href="#contato" class="btn btn-primary">Falar com Consultores</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="media-card">
+              <img src="assets/images/poly-video-peview-2.jpg" alt="Preview Polynomial" class="main-preview">
+              <div class="media-gallery">
+                <img src="assets/images/poly-img1.webp" alt="Polynomial tela 1" loading="lazy">
+                <img src="assets/images/poly-img2.webp" alt="Polynomial tela 2" loading="lazy">
+                <img src="assets/images/poly-img3.webp" alt="Polynomial tela 3" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 3: Instruments -->
+        <div class="feature-row" id="modulo-instruments">
+          <div class="feature-info">
+            <div class="module-chip">
+              <img src="assets/images/Instruments.png" alt="Instruments" width="28">
+              <span>Gestão de Portfólio & Custódia</span>
+            </div>
+            <h2>Consolide e Monitore Suas Operações Financeiras.</h2>
+            <p>
+              O <strong>Instruments</strong> oferece controle integral da carteira de investimentos, permitindo criar e segmentar books de operações, unindo posições em ações à vista e derivativos complexos. Acompanhe o fluxo de negociações em tempo real e mantenha um histórico de auditoria perfeito para avaliar o retorno das estratégias.
+            </p>
+            <ul class="feature-bullets">
+              <li>Organização de books de tesouraria, trading e clientes estruturados.</li>
+              <li>Controle de vencimentos, liquidações e chamadas de margem.</li>
+              <li>Histórico granular e rastreabilidade total de cada trade.</li>
+            </ul>
+            <div class="feature-cta">
+              <a href="https://www.youtube.com/watch?v=ERIEerPwCHU" target="_blank" rel="noopener" class="btn btn-outline btn-video">
+                <span class="play-icon">▶</span> Assistir Vídeo do Instruments
+              </a>
+              <a href="#contato" class="btn btn-primary">Agendar Demonstração</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="media-card">
+              <img src="assets/images/inst-video-peview.jpg" alt="Preview Instruments" class="main-preview">
+              <div class="media-gallery">
+                <img src="assets/images/inst-img1.webp" alt="Instruments tela 1" loading="lazy">
+                <img src="assets/images/inst-img2.webp" alt="Instruments tela 2" loading="lazy">
+                <img src="assets/images/inst3-img3.webp" alt="Instruments tela 3" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 4: Risk Manager (Invertido) -->
+        <div class="feature-row reverse" id="modulo-risk">
+          <div class="feature-info">
+            <div class="module-chip">
+              <img src="assets/images/risk-manager.png" alt="Risk Manager" width="28">
+              <span>Estresse de Portfólio & VaR</span>
+            </div>
+            <h2>Análise Preditiva e Testes de Estresse para Derivativos.</h2>
+            <p>
+              Com o <strong>Risk Manager</strong>, simule o impacto real de choques severos de preços, quebras de correlação e shifts nas curvas de juros em seu resultado financeiro. Crie testes de estresse personalizados e antecipe-se a cenários de cauda com tranquilidade regulatória e prudencial.
+            </p>
+            <ul class="feature-bullets">
+              <li>Stress test paramétrico e não-paramétrico com cenários históricos (Crise 2008, Joesley Day, Covid-19).</li>
+              <li>Cálculo de VaR (Value at Risk) e Expected Shortfall (ES).</li>
+              <li>Monitoramento visual de limites de risco por mesa ou gestor.</li>
+            </ul>
+            <div class="feature-cta">
+              <a href="https://www.youtube.com/watch?v=c7p2MNAo8vk" target="_blank" rel="noopener" class="btn btn-outline btn-video">
+                <span class="play-icon">▶</span> Assistir Vídeo do Risk Manager
+              </a>
+              <a href="#contato" class="btn btn-primary">Proteger Minha Carteira</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="media-card">
+              <img src="assets/images/risk-video-peview.jpg" alt="Preview Risk Manager" class="main-preview">
+              <div class="media-gallery">
+                <img src="assets/images/risk-img1.webp" alt="Risk tela 1" loading="lazy">
+                <img src="assets/images/risk-img2.webp" alt="Risk tela 2" loading="lazy">
+                <img src="assets/images/risk-img3.webp" alt="Risk tela 3" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION MEIO DA PÁGINA -->
+    <section class="banner-cta">
+      <div class="container banner-inner">
+        <div class="banner-text">
+          <h2>Desbloqueie o Potencial dos Seus Derivativos</h2>
+          <p>Nossos especialistas estão prontos para demonstrar como a FDerivs pode otimizar suas operações, gerenciar riscos e impulsionar seus resultados financeiros.</p>
+        </div>
+        <div class="banner-action">
+          <a href="#contato" class="btn btn-primary btn-lg">Solicitar Contato de Especialista</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPACITAÇÃO & EDTECH (FDLEARN) -->
+    <section class="section education" id="capacitacao">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Educação Executiva</span>
+          <h2 class="section-title">Capacitação Avançada para o Mercado Financeiro</h2>
+          <p class="section-subtitle">
+            Conheça o ecossistema <strong>FDLearn</strong>: unimos rigor acadêmico aos desafios práticos das mesas de operações, corretoras e tesourarias brasileiras.
+          </p>
+        </div>
+
+        <div class="courses-grid">
+          <div class="course-card">
+            <img src="assets/images/tela-curso-1-fderivs.jpg" alt="Curso Derivativos de Ações" class="course-img" loading="lazy">
+            <div class="course-body">
+              <span class="course-badge">EAD & Presencial</span>
+              <h3>Formação em Derivativos de Ações</h3>
+              <p>Modelagem, precificação e estratégias práticas com opções de compra e venda no mercado local.</p>
+              <a href="#contato" class="course-link">Saiba Mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="assets/images/tela-curso-2-fderivs-1.jpg" alt="Curso Produtos Estruturados" class="course-img" loading="lazy">
+            <div class="course-body">
+              <span class="course-badge">Avançado</span>
+              <h3>Engenharia de Produtos Estruturados</h3>
+              <p>Construção de notas estruturadas (COE), capital protegido e estruturas de crédito privado.</p>
+              <a href="#contato" class="course-link">Saiba Mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="assets/images/tela-curso-3-fderivs.jpg" alt="Curso Gestão de Risco" class="course-img" loading="lazy">
+            <div class="course-body">
+              <span class="course-badge">Quant & Risk</span>
+              <h3>Gestão Quantitativa de Risco</h3>
+              <p>Aplicação de testes de estresse, Greeks, superfícies de volatilidade e VaR em cenários voláteis.</p>
+              <a href="#contato" class="course-link">Saiba Mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="assets/images/tela-curso-4-fderivs-1.jpg" alt="Curso Operação de Juros" class="course-img" loading="lazy">
+            <div class="course-body">
+              <span class="course-badge">Renda Fixa & DI</span>
+              <h3>Operações de Curvas de Juros</h3>
+              <p>Interpolação de curvas DI, cupom cambial e estratégias de hedge contra volatilidade da taxa Selic.</p>
+              <a href="#contato" class="course-link">Saiba Mais &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS ESTRUTURADOS & LIVRO -->
+    <section class="section structured-products" id="estruturados">
+      <div class="container structured-grid">
+        <div class="book-media">
+          <div class="book-wrapper">
+            <img src="assets/images/book-angle.webp" alt="Livro Produtos Estruturados - Uma Visão Quântica" class="book-cover">
+          </div>
+        </div>
+        <div class="book-content">
+          <span class="section-tag">Publicação de Referência</span>
+          <h2>Produtos Estruturados: Uma Visão Quântica</h2>
+          <p class="lead-text">
+            Obra fundamental para profissionais e entusiastas do mercado financeiro que buscam desmistificar a arquitetura quantitativa por trás das estruturas mais sofisticadas de investimento.
+          </p>
+          <p>
+            Compreenda a fundo a lógica matemática, a composição de payoffs e o gerenciamento de risco de instrumentos estruturados modernos, combinando rigor analítico com aplicações práticas reais.
+          </p>
+          <div class="book-features">
+            <div class="b-feat">
+              <span class="feat-icon">📘</span>
+              <span>Análise teórica e prática passo a passo</span>
+            </div>
+            <div class="b-feat">
+              <span class="feat-icon">📐</span>
+              <span>Modelos matemáticos aplicados ao mercado B3</span>
+            </div>
+            <div class="b-feat">
+              <span class="feat-icon">💼</span>
+              <span>Casos reais de estruturação institucional</span>
+            </div>
+          </div>
+          <div class="book-cta">
+            <a href="#contato" class="btn btn-primary">Solicitar Exemplar ou Informações</a>
+            <a href="https://www.youtube.com/@Fderivs" target="_blank" rel="noopener" class="btn btn-outline">Canal no YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTORIA E SOLUÇÕES PERSONALIZADAS -->
+    <section class="section consulting" id="consultoria">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Advisory Especializado</span>
+          <h2 class="section-title">Soluções Personalizadas com Base em Experiência de Mercado</h2>
+          <p class="section-subtitle">
+            Além de software líder, entregamos consultoria de alta intensidade para estruturação de novos produtos, validação de modelos e adequação normativa.
+          </p>
+        </div>
+
+        <div class="consulting-cards">
+          <div class="c-card">
+            <div class="c-icon">🏛️</div>
+            <h3>Mapeamento de Riscos de Mesa</h3>
+            <p>Diagnóstico de exposições não mapeadas, limites de perda máxima e desenho de políticas de risco sob medida.</p>
+          </div>
+          <div class="c-card">
+            <div class="c-icon">⚙️</div>
+            <h3>Desenvolvimento Customizado</h3>
+            <p>Engenharia de rotinas quantitativas específicas, APIs customizadas e integração direta com seus sistemas legados.</p>
+          </div>
+          <div class="c-card">
+            <div class="c-icon">📊</div>
+            <h3>Estruturação de Operações Complexas</h3>
+            <p>Suporte completo na modelagem matemática de notas estruturadas e derivativos de balcão regulados pela B3/CVM.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO / FORMULÁRIO COM SUPABASE -->
+    <section class="section contact-section" id="contato">
+      <div class="container contact-container">
+        <div class="contact-info">
+          <span class="section-tag">Fale Conosco</span>
+          <h2>Solicite o contato de um de nossos especialistas</h2>
+          <p>
+            Pronto para transformar a gestão de derivativos e carteiras da sua instituição? Preencha o formulário e nossa equipe técnica retornará prontamente.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Atendimento Corporativo</strong>
+                <p>São Paulo - SP, Brasil</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>Telefone Comercial</strong>
+                <p><a href="tel:+551142800172">+55 (11) 4280-0172</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <strong>E-mail Direto</strong>
+                <p><a href="mailto:contato@fdlearn.com">contato@fdlearn.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-box">
+            <h4>Acompanhe a FDerivs</h4>
+            <div class="social-links">
+              <a href="https://www.youtube.com/@Fderivs" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+                <span>YouTube</span>
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <div class="form-card">
+            <h3>Envie sua mensagem</h3>
+            <p>Preencha os campos abaixo para iniciarmos nossa conversa técnica.</p>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="nome">Seu Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Roberto Silva" required>
+                <span class="error-msg" id="error-nome"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">E-mail Corporativo *</label>
+                  <input type="email" id="email" name="email" placeholder="nome@empresa.com" required>
+                  <span class="error-msg" id="error-email"></span>
+                </div>
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input type="text" id="empresa" name="empresa" placeholder="Sua instituição / gestora">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="interesse">Área de Interesse Principal</label>
+                <select id="interesse" name="interesse">
+                  <option value="plataforma">Plataforma FDerivs Completa</option>
+                  <option value="appreciator">Módulo Appreciator (Precificação)</option>
+                  <option value="polynomial">Módulo Polynomial (Curvas & Modelagem)</option>
+                  <option value="instruments">Módulo Instruments (Controle de Carteira)</option>
+                  <option value="risk-manager">Módulo Risk Manager (Stress Test & VaR)</option>
+                  <option value="cursos">Cursos & Capacitação FDLearn</option>
+                  <option value="consultoria">Consultoria Quantitativa</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem">Mensagem / Demanda *</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente como a FDerivs pode apoiar sua operação..." required></textarea>
+                <span class="error-msg" id="error-mensagem"></span>
+              </div>
+
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+                <span class="btn-text">Enviar Mensagem</span>
+                <span class="btn-spinner" style="display: none;"></span>
+              </button>
+
+              <div class="form-status" id="formStatus" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ INSTITUCIONAL -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <img src="assets/images/logo-fderivs-transparent.png" alt="FDerivs Logo" class="footer-logo">
+        <p>
+          Simulação e gestão de derivativos de ações com precisão milimétrica e tecnologia quantitativa para o ecossistema financeiro institucional.
+        </p>
+        <span class="copyright">&copy; 2026 FDerivs Tecnologia Financeira. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#modulo-appreciator">Appreciator</a></li>
+          <li><a href="#modulo-polynomial">Polynomial</a></li>
+          <li><a href="#modulo-instruments">Instruments</a></li>
+          <li><a href="#modulo-risk">Risk Manager</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ecossistema</h4>
+        <ul>
+          <li><a href="#capacitacao">FDLearn Educação</a></li>
+          <li><a href="#estruturados">Livro Produtos Estruturados</a></li>
+          <li><a href="#consultoria">Consultoria Técnica</a></li>
+          <li><a href="https://www.youtube.com/@Fderivs" target="_blank" rel="noopener">Canal YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p>Telefone: +55 (11) 4280-0172</p>
+        <p>E-mail: contato@fdlearn.com</p>
+        <p>São Paulo - SP, Brasil</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabaseClient.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

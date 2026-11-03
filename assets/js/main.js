@@ -3,38 +3,23 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Menu Mobile Toggle
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
+  // 1. Menu Mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      mobileToggle.classList.toggle('open');
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
     });
 
-    // Fechar ao clicar em um link
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    siteNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileToggle.classList.remove('open');
+        siteNav.classList.remove('active');
       });
     });
   }
 
-  // 2. Navbar com blur dinâmico no scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.style.background = 'rgba(10, 13, 20, 0.95)';
-      navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
-    } else {
-      navbar.style.background = 'rgba(10, 13, 20, 0.85)';
-      navbar.style.boxShadow = 'none';
-    }
-  });
-
-  // 3. Validação e Envio do Formulário de Contato
+  // 2. Formulário de Contato com Validação e Supabase
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const formStatus = document.getElementById('formStatus');
@@ -45,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Limpar erros anteriores
+      // Limpar erros
       document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
       formStatus.style.display = 'none';
       formStatus.className = 'form-status';
@@ -53,13 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const nome = document.getElementById('nome').value.trim();
       const email = document.getElementById('email').value.trim();
       const empresa = document.getElementById('empresa').value.trim();
-      const interesse = document.getElementById('interesse').value;
       const mensagem = document.getElementById('mensagem').value.trim();
 
       let hasError = false;
 
       if (!nome) {
-        document.getElementById('error-nome').textContent = 'Por favor, informe seu nome completo.';
+        document.getElementById('error-nome').textContent = 'Por favor, informe seu nome.';
         hasError = true;
       }
 
@@ -69,40 +53,60 @@ document.addEventListener('DOMContentLoaded', () => {
         hasError = true;
       }
 
-      if (!mensagem || mensagem.length < 5) {
-        document.getElementById('error-mensagem').textContent = 'Por favor, informe sua mensagem ou necessidade.';
+      if (!mensagem || mensagem.length < 3) {
+        document.getElementById('error-mensagem').textContent = 'Por favor, digite sua mensagem.';
         hasError = true;
       }
 
       if (hasError) return;
 
-      // Estado de Carregamento
       submitBtn.disabled = true;
       if (btnText) btnText.textContent = 'Enviando...';
       if (btnSpinner) btnSpinner.style.display = 'inline-block';
 
       try {
-        const payload = { nome, email, empresa, interesse, mensagem };
+        const payload = { nome, email, empresa, mensagem, interesse: 'contato_site' };
         const result = await window.fderivsSupabase.submitContact(payload);
 
         if (result.success) {
-          formStatus.textContent = 'Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.';
+          formStatus.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
           formStatus.classList.add('success');
           formStatus.style.display = 'block';
           form.reset();
         } else {
-          throw new Error(result.error || 'Erro ao registrar contato.');
+          throw new Error(result.error || 'Erro ao enviar contato.');
         }
       } catch (err) {
-        formStatus.textContent = 'Ocorreu um erro ao enviar. Por favor, tente novamente ou entre em contato pelo telefone.';
+        formStatus.textContent = 'Ocorreu um erro ao enviar. Por favor, contate-nos pelo telefone ou e-mail.';
         formStatus.classList.add('error');
         formStatus.style.display = 'block';
       } finally {
         submitBtn.disabled = false;
-        if (btnText) btnText.textContent = 'Enviar Mensagem';
+        if (btnText) btnText.textContent = 'Enviar';
         if (btnSpinner) btnSpinner.style.display = 'none';
       }
     });
   }
 });
 
+/**
+ * Troca dinâmica da imagem preview do módulo ao clicar nas miniaturas
+ */
+function swapPreview(sectionId, imgSrc) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  const preview = section.querySelector('.preview-img');
+  if (preview) {
+    preview.src = imgSrc;
+  }
+
+  // Atualizar classe ativa na miniatura
+  const strip = section.querySelector('.thumbnail-strip');
+  if (strip) {
+    strip.querySelectorAll('.thumb-pic').forEach(img => {
+      img.classList.remove('active');
+      if (img.src === imgSrc) img.classList.add('active');
+    });
+  }
+}

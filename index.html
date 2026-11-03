@@ -17,40 +17,71 @@
 <body class="fderivs-wp-clone">
 
   <!-- ========================================================
-       TOP HEADER / NAVBAR (ESTILO ELEMENTOR ORIGINAL)
+       TOP HEADER / NAVBAR (ESTILO ELEMENTOR ORIGINAL 1:1)
        ======================================================== -->
   <header class="wp-header" id="header">
     <div class="header-inner container-fluid">
-      <!-- Logo Esquerda -->
-      <a href="#hero" class="site-brand">
-        <img src="assets/images/logo-fderivs-transparent.png" alt="FDerivs" class="site-logo" height="42">
-      </a>
+      
+      <!-- Coluna 1: Logo Oficial com altura de 68px -->
+      <div class="header-logo-col">
+        <a href="#hero" class="site-brand">
+          <img src="assets/images/logo-fderivs-transparent.png" alt="FDerivs" class="site-logo">
+        </a>
+      </div>
 
-      <!-- Menu Central Original -->
+      <!-- Coluna 2: Menu Central com sublinhado cyan ativo / hover e seta em Cursos -->
       <nav class="site-nav" id="siteNav">
         <ul class="nav-links">
-          <li><a href="#app" class="nav-item">Plataforma</a></li>
+          <li>
+            <a href="#app" class="nav-item">Plataforma</a>
+          </li>
           <li class="has-dropdown">
-            <a href="#cursos" class="nav-item">Cursos</a>
+            <a href="#cursos" class="nav-item">
+              Cursos
+              <svg class="dropdown-arrow-icon" viewBox="0 0 320 512" width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+              </svg>
+            </a>
             <ul class="dropdown-menu">
               <li><a href="#cursos">Cursos Presenciais</a></li>
-              <li><a href="https://app.fdlearn.com" target="_blank" rel="noopener">EAD – FDLearn</a></li>
+              <li><a href="https://www.fdlearn.com?home-fderivs" target="_blank" rel="noopener">EAD – FDLearn</a></li>
             </ul>
           </li>
-          <li><a href="#consultoria" class="nav-item">Consultoria</a></li>
-          <li><a href="#livro" class="nav-item">Produtos Estruturados</a></li>
-          <li><a href="#publicacoes" class="nav-item">Publicações</a></li>
-          <li><a href="https://www.lightgrey-starling-209917.hostingersite.com/wiki/" target="_blank" rel="noopener" class="nav-item">Wiki</a></li>
-          <li><a href="#contato" class="nav-item">Contato</a></li>
+          <li>
+            <a href="#consultoria" class="nav-item">Consultoria</a>
+          </li>
+          <li>
+            <a href="#livro" class="nav-item active">Produtos Estruturados</a>
+          </li>
+          <li>
+            <a href="#publicacoes" class="nav-item">Publicações</a>
+          </li>
+          <li>
+            <a href="https://www.lightgrey-starling-209917.hostingersite.com/wiki/" target="_blank" rel="noopener" class="nav-item">Wiki</a>
+          </li>
+          <li>
+            <a href="#contato" class="nav-item">Contato</a>
+          </li>
         </ul>
       </nav>
 
-      <!-- Botão Hambúrguer Mobile -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- Coluna 3: Botão ENTRAR com ícone de usuário exato -->
+      <div class="header-action-col">
+        <a class="btn-entrar" href="https://lightgrey-starling-209917.hostingersite.com/auth?returnUrl=/" target="_blank" rel="noopener">
+          <svg aria-hidden="true" class="user-icon-svg" viewBox="0 0 448 512" width="13" height="13" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+          </svg>
+          <span class="btn-entrar-text">ENTRAR</span>
+        </a>
+
+        <!-- Botão Hambúrguer Mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
     </div>
   </header>
 

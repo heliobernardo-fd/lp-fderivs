@@ -1,25 +1,25 @@
 /* ==========================================================================
-   FDERIVS - CLONE FIDEDIGNO DO LAYOUT WORDPRESS / ELEMENTOR
-   Cores, Tipografia, Espaçamentos e Efeitos Rigorosamente Mapeados
+   FDERIVS - FOLHA DE ESTILOS PRINCIPAL
+   Design System, Componentes e Responsividade
    ========================================================================== */
 
 :root {
-  /* Paleta Extraída do Elementor Global (post-124.css & post-924.css) */
-  --wp-bg-dark: #0A131F;
-  --wp-bg-deep: #020100;
-  --wp-bg-card: #121E2E;
-  --wp-bg-gradient: linear-gradient(180deg, #121E2E 0%, #283C55 100%);
-  --wp-cyan: #00AEDB;
-  --wp-cyan-bright: #00CBFF;
-  --wp-blue-btn: #3D5A80;
-  --wp-text-primary: #FFFFFF;
-  --wp-text-body: #BEBEBE;
-  --wp-text-subtle: #8E8E8E;
-  --wp-border: rgba(255, 255, 255, 0.08);
+  /* Paleta de Cores do Projeto */
+  --fd-bg-dark: #0A131F;
+  --fd-bg-deep: #020100;
+  --fd-bg-card: #121E2E;
+  --fd-bg-gradient: linear-gradient(180deg, #121E2E 0%, #283C55 100%);
+  --fd-cyan: #00AEDB;
+  --fd-cyan-bright: #00CBFF;
+  --fd-blue-btn: #3D5A80;
+  --fd-text-primary: #FFFFFF;
+  --fd-text-body: #BEBEBE;
+  --fd-text-subtle: #8E8E8E;
+  --fd-border: rgba(255, 255, 255, 0.08);
 
-  /* Fontes Originais */
-  --wp-font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --wp-font-heading: "Inter", sans-serif;
+  /* Tipografia */
+  --fd-font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --fd-font-heading: "Inter", sans-serif;
 }
 
 /* Reset Padrão */
@@ -34,10 +34,10 @@ html {
   font-size: 16px;
 }
 
-body.fderivs-wp-clone {
-  background-color: var(--wp-bg-deep);
-  color: var(--wp-text-body);
-  font-family: var(--wp-font-main);
+body {
+  background-color: var(--fd-bg-deep);
+  color: var(--fd-text-body);
+  font-family: var(--fd-font-main);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -64,7 +64,7 @@ body.fderivs-wp-clone {
 
 .text-center { text-align: center; }
 
-/* Efeito Exato .blue-text do Elementor Original */
+/* Efeito Gradiente de Texto Metálico */
 .blue-text {
   padding-bottom: 7px;
   padding-top: 7px;
@@ -75,7 +75,7 @@ body.fderivs-wp-clone {
   display: inline-block;
 }
 
-/* Tags de Seção Douradas / Amarelas Originais */
+/* Tags de Destaque das Seções */
 .section-tag-gold {
   display: inline-block;
   font-size: 13px;
@@ -87,9 +87,9 @@ body.fderivs-wp-clone {
 }
 
 /* ==========================================================================
-   HEADER / NAVBAR (IDÊNTICO AO WORDPRESS ELEMENTOR 1:1)
+   HEADER / NAVEGAÇÃO SUPERIOR
    ========================================================================== */
-.wp-header {
+.site-header {
   position: fixed; /* Fixo no topo sobre o hero */
   top: 0;
   left: 0;
@@ -103,7 +103,7 @@ body.fderivs-wp-clone {
 }
 
 /* Estado com scroll ativo: 84% de opacidade (#0A131FD6) com leve blur de vidro */
-.wp-header.scrolled {
+.site-header.scrolled {
   background-color: rgba(10, 19, 31, 0.84); /* Exatamente 84% de opacidade */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -127,13 +127,13 @@ body.fderivs-wp-clone {
 }
 
 .site-logo {
-  height: 68px; /* Altura exata do post-108.css */
+  height: 68px;
   width: auto;
   object-fit: contain;
   display: block;
 }
 
-/* Coluna 2: Menu Central com sublinhado cyan e espaçamentos */
+/* Coluna 2: Menu Central */
 .site-nav {
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@ body.fderivs-wp-clone {
 .site-nav .nav-links {
   display: flex;
   list-style: none;
-  gap: 33px; /* Espaçamento exato do Elementor: --e-nav-menu-horizontal-menu-item-margin: calc(33px / 2) */
+  gap: 33px;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -160,9 +160,9 @@ body.fderivs-wp-clone {
   align-items: center;
   gap: 6px;
   color: #AAAAAA;
-  font-family: var(--wp-font-main);
-  font-size: 15px; /* Tamanho exato: --e-global-typography-520c191-font-size: 15px */
-  font-weight: 600; /* Peso exato: 600 */
+  font-family: var(--fd-font-main);
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
   padding: 18px 0;
@@ -179,7 +179,7 @@ body.fderivs-wp-clone {
   transform: rotate(180deg);
 }
 
-/* Barra inferior (underline) idêntica à do print */
+/* Sublinhado ativo/hover do menu */
 .site-nav .nav-item::after {
   content: '';
   position: absolute;
@@ -187,7 +187,7 @@ body.fderivs-wp-clone {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--wp-cyan-bright); /* #00CBFF / #00AEDB */
+  background-color: var(--fd-cyan-bright);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.25s ease;
@@ -195,7 +195,7 @@ body.fderivs-wp-clone {
 
 .site-nav .nav-item:hover,
 .site-nav .nav-item.active {
-  color: var(--wp-cyan-bright);
+  color: var(--fd-cyan-bright);
 }
 
 .site-nav .nav-item:hover::after,
@@ -214,7 +214,7 @@ body.fderivs-wp-clone {
   top: 100%;
   left: 0;
   min-width: 210px;
-  background-color: #1F1F1F; /* Fundo exato do post-108.css */
+  background-color: #1F1F1F;
   border-radius: 0px 0px 5px 5px;
   list-style: none;
   padding: 6px 0;
@@ -237,7 +237,7 @@ body.fderivs-wp-clone {
 }
 
 .dropdown-menu li a:hover {
-  background-color: var(--wp-blue-btn); /* #3D5A80 */
+  background-color: var(--fd-blue-btn);
   color: #FFFFFF;
 }
 
@@ -255,9 +255,9 @@ body.fderivs-wp-clone {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: var(--wp-blue-btn); /* #3D5A80 */
+  background-color: var(--fd-blue-btn);
   color: #FFFFFF;
-  font-family: var(--wp-font-main);
+  font-family: var(--fd-font-main);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -268,7 +268,7 @@ body.fderivs-wp-clone {
 }
 
 .btn-entrar:hover {
-  background-color: var(--wp-cyan);
+  background-color: var(--fd-cyan);
   color: #000000;
 }
 
@@ -304,9 +304,9 @@ body.fderivs-wp-clone {
 }
 
 /* ==========================================================================
-   BOTÕES ELEMENTOR ORIGINAIS
-   ========================================================================= */
-.btn-elementor {
+   BOTÕES E AÇÕES
+   ========================================================================== */
+.btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -321,12 +321,12 @@ body.fderivs-wp-clone {
 }
 
 .btn-cyan {
-  background-color: var(--wp-blue-btn);
+  background-color: var(--fd-blue-btn);
   color: #FFFFFF;
   border: none;
 }
 .btn-cyan:hover {
-  background-color: var(--wp-cyan);
+  background-color: var(--fd-cyan);
   color: #000000;
 }
 
@@ -336,8 +336,8 @@ body.fderivs-wp-clone {
   border: 1px solid #FFFFFF;
 }
 .btn-transparent:hover {
-  background-color: var(--wp-cyan);
-  border-color: var(--wp-cyan);
+  background-color: var(--fd-cyan);
+  border-color: var(--fd-cyan);
   color: #000000;
 }
 
@@ -363,7 +363,7 @@ body.fderivs-wp-clone {
 /* ==========================================================================
    HERO SECTION (COM BG-FDERIVS-1.JPG)
    ========================================================================== */
-.wp-hero {
+.hero-section {
   position: relative;
   background-color: #0A131F;
   background-image: url('../images/bg-fderivs-1.jpg');
@@ -382,7 +382,7 @@ body.fderivs-wp-clone {
 }
 
 .hero-text-col {
-  width: 65%; /* Largura exata do Elementor: --width: 65% */
+  width: 65%; /* Largura da coluna principal */
   max-width: 860px;
 }
 
@@ -404,7 +404,7 @@ body.fderivs-wp-clone {
 }
 
 .hero-description p {
-  font-size: 13px; /* Tamanho exato e legível do Elementor */
+  font-size: 13px; /* Tipografia da descrição */
   font-weight: 400;
   color: #BEBEBE;
   line-height: 1.65;
@@ -422,211 +422,470 @@ body.fderivs-wp-clone {
   flex-wrap: wrap;
 }
 
-.hero-actions .btn-elementor {
-  font-size: 12.5px;
+.hero-actions .btn-cta {
+  font-size: 14px; /* Aumentado em 10% (de 12.5px para 14px) */
   letter-spacing: 0.04em;
-  padding: 12px 24px;
+  padding: 14px 28px; /* Aumentado em ~10% (de 12px 24px para 14px 28px) */
 }
 
 /* ==========================================================================
-   QUICKBAR DOS 4 MÓDULOS (APPRECIATOR, POLY, INST, RISK)
+   MÓDULOS DE PRODUTOS (CARROSSEL INTERATIVO)
    ========================================================================== */
-.modules-quickbar {
-  background: linear-gradient(180deg, #0A131F 0%, #121E2E 100%);
-  padding: 40px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.modules-interactive-section {
+  position: relative;
+  background-color: #020100;
+  padding: 60px 0 100px;
+  overflow: hidden;
 }
 
-.modules-quickbar-grid {
+.relative-z {
+  position: relative;
+  z-index: 10;
+}
+
+/* Background Dinâmico com Fade to Black:
+   Começa no topo com preto profundo (#020100) que vai sumindo para baixo revelando a imagem,
+   e termina embaixo com fade to black suave */
+.dynamic-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dynamic-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.dynamic-bg-layer.active {
+  opacity: 0.35; /* Imagem revelada com nitidez */
+}
+
+/* O fade preto desce do topo para baixo revelando a imagem verdadeira */
+.bg-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    #020100 0%,
+    rgba(2, 1, 0, 0.82) 18%,
+    rgba(2, 1, 0, 0.25) 45%,
+    rgba(2, 1, 0, 0.35) 75%,
+    #020100 100%
+  );
+}
+
+/* Linha das 4 Tabs Superiores alinhada com o box de baixo */
+.modules-tabs-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .module-tab-card {
-  background: rgba(18, 30, 46, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 24px 20px;
-  text-decoration: none;
+  border-radius: 10px;
+  padding: 26px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border: none; /* Borda fina removida */
+}
+
+/* Ícones dos Produtos Maiores e Sem Animação de Crescimento no Hover */
+.tab-icon-box {
   display: flex;
-  flex-direction: column;
-  transition: all 0.25s ease;
-}
-
-.module-tab-card:hover,
-.module-tab-card.active {
-  background: linear-gradient(180deg, #121E2E 0%, #283C55 100%);
-  border-color: var(--wp-cyan);
-  transform: translateY(-3px);
-}
-
-.tab-icon {
+  justify-content: center;
+  align-items: center;
   margin-bottom: 14px;
 }
 
-.tab-info h3 {
-  font-size: 18px;
+.tab-app-icon {
+  width: 130px; /* Aumentado consideravelmente para ter o destaque do print */
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+  /* Sem animação de escala no hover */
+}
+
+.tab-card-title {
+  font-size: 19px;
   font-weight: 700;
-  color: #FFFFFF;
   margin-bottom: 8px;
 }
 
-.tab-info p {
-  font-size: 12px;
+.tab-card-desc {
+  font-size: 13px;
   color: #BEBEBE;
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0;
 }
 
-/* ==========================================================================
-   SEÇÕES PROFUNDAS DOS MÓDULOS (COM VÍDEO E MINIATURAS)
-   ========================================================================== */
-.module-deep-section {
-  padding: 80px 0;
-  background-color: #0A131F;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.module-deep-section.alt-bg {
-  background: linear-gradient(180deg, #0A131F 0%, #040404 100%);
-}
-
-.split-module-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 56px;
-}
-
-.split-module-row.reverse {
-  direction: rtl;
-}
-.split-module-row.reverse > * {
-  direction: ltr;
-}
-
-.module-header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.badge-title {
-  font-size: 20px;
-  font-weight: 700;
+.tab-card-desc b {
   color: #FFFFFF;
 }
 
-.module-headline {
-  font-size: 30px;
-  line-height: 1.3;
-  margin-bottom: 20px;
+/* Cores e Fundos Originais das 4 Tabs (Sem bordas) */
+/* 1. Appreciator */
+.tab-appreciator {
+  background-color: rgba(243, 119, 53, 0.23);
+}
+.tab-appreciator .tab-card-title { color: #F37735; }
+.tab-appreciator:hover, .tab-appreciator.active {
+  background-color: rgba(243, 119, 53, 0.40);
+  box-shadow: 0 0 25px rgba(243, 119, 53, 0.35);
+  transform: translateY(-4px); /* Apenas o card levanta */
 }
 
-.module-copy {
-  font-size: 14px;
+/* 2. Polynomial */
+.tab-polynomial {
+  background-color: rgba(0, 174, 219, 0.23);
+}
+.tab-polynomial .tab-card-title { color: #00AEDB; }
+.tab-polynomial:hover, .tab-polynomial.active {
+  background-color: rgba(0, 174, 219, 0.40);
+  box-shadow: 0 0 25px rgba(0, 174, 219, 0.35);
+  transform: translateY(-4px);
+}
+
+/* 3. Instruments */
+.tab-instruments {
+  background-color: rgba(142, 188, 0, 0.23);
+}
+.tab-instruments .tab-card-title { color: #8EBC00; }
+.tab-instruments:hover, .tab-instruments.active {
+  background-color: rgba(142, 188, 0, 0.40);
+  box-shadow: 0 0 25px rgba(142, 188, 0, 0.35);
+  transform: translateY(-4px);
+}
+
+/* 4. Risk Manager */
+.tab-risk {
+  background-color: rgba(124, 65, 153, 0.28);
+}
+.tab-risk .tab-card-title { color: #7C4199; }
+.tab-risk:hover, .tab-risk.active {
+  background-color: rgba(124, 65, 153, 0.45);
+  box-shadow: 0 0 25px rgba(124, 65, 153, 0.35);
+  transform: translateY(-4px);
+}
+
+/* Painéis de Conteúdo dos Módulos */
+/* Controle de Exibição dos Painéis de Conteúdo */
+.product-panel {
+  display: none;
+}
+
+.product-panel.active {
+  display: block;
+  animation: fadeInPanel 0.4s ease forwards;
+}
+
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.module-panels-container {
+  position: relative;
+  width: 100%;
+}
+
+.panel-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.panel-split-layout.reverse {
+  grid-template-columns: 1.15fr 1fr;
+}
+
+/* Card de Texto do Módulo */
+.panel-text-card {
+  background-color: rgba(18, 30, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 38px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.panel-icon-badge {
+  margin-bottom: 14px;
+}
+
+.panel-sub-label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.panel-main-title {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.panel-description {
+  font-size: 13.5px;
   color: #BEBEBE;
   line-height: 1.7;
   margin-bottom: 28px;
 }
 
-.module-copy strong {
+.panel-description strong {
   color: #FFFFFF;
 }
 
-/* Vídeo Preview Card */
-.video-preview-wrapper {
+/* Cores de Destaque por Tema nos Painéis */
+.theme-orange .panel-sub-label,
+.theme-orange .panel-main-title { color: #F37735; }
+
+.theme-cyan .panel-sub-label,
+.theme-cyan .panel-main-title { color: #00AEDB; }
+
+.theme-green .panel-sub-label,
+.theme-green .panel-main-title { color: #8EBC00; }
+
+.theme-purple .panel-sub-label,
+.theme-purple .panel-main-title { color: #7C4199; }
+
+/* Botões de Ação Específicos de Cada Módulo */
+.btn-product-cta {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.btn-orange { background-color: #F37735; color: #000000; }
+.btn-orange:hover { background-color: #ff8e52; }
+
+.btn-cyan { background-color: #00AEDB; color: #000000; }
+.btn-cyan:hover { background-color: #00cbff; }
+
+.btn-green { background-color: #8EBC00; color: #000000; }
+.btn-green:hover { background-color: #a4d800; }
+
+.btn-purple { background-color: #7C4199; color: #FFFFFF; }
+.btn-purple:hover { background-color: #9653b6; }
+
+/* Card de Mídia (Vídeo e Miniaturas) */
+.panel-media-card {
+  background: rgba(18, 30, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.panel-video-caption {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+/* Box da Capa do Vídeo */
+.video-thumbnail-box {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   margin-bottom: 16px;
 }
 
-.video-link-lightbox {
-  display: block;
-  position: relative;
-  text-decoration: none;
-}
-
-.preview-img {
+.video-cover-img {
   width: 100%;
   display: block;
   transition: transform 0.3s ease;
 }
 
-.video-link-lightbox:hover .preview-img {
+.video-thumbnail-box:hover .video-cover-img {
   transform: scale(1.02);
 }
 
-.play-btn-circle {
+/* Botão de Play Vimeo Centralizado */
+.vimeo-play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  background-color: rgba(0, 174, 219, 0.9);
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(0, 174, 219, 0.8);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.video-link-lightbox:hover .play-btn-circle {
+.vimeo-play-button.orange-glow { background: rgba(243, 119, 53, 0.9); box-shadow: 0 0 25px rgba(243, 119, 53, 0.8); }
+.vimeo-play-button.cyan-glow { background: rgba(0, 174, 219, 0.9); box-shadow: 0 0 25px rgba(0, 174, 219, 0.8); }
+.vimeo-play-button.green-glow { background: rgba(142, 188, 0, 0.9); box-shadow: 0 0 25px rgba(142, 188, 0, 0.8); }
+.vimeo-play-button.purple-glow { background: rgba(124, 65, 153, 0.9); box-shadow: 0 0 25px rgba(124, 65, 153, 0.8); }
+
+.video-thumbnail-box:hover .vimeo-play-button {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-.play-triangle {
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 16px solid #FFFFFF;
+.vimeo-play-icon {
+  font-size: 20px;
+  color: #FFFFFF;
   margin-left: 4px;
 }
 
-.video-caption-label {
-  display: block;
-  background-color: rgba(10, 19, 31, 0.9);
-  color: #FFFFFF;
-  font-size: 13px;
-  font-weight: 600;
-  text-align: center;
-  padding: 10px;
-}
-
 /* Faixa de Miniaturas */
-.thumbnail-strip {
+.panel-thumbs-strip {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
 }
 
-.thumbnail-strip[data-strip="risk"] {
+.panel-thumbs-strip.five-items {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.thumb-pic {
+.mini-thumb {
   width: 100%;
-  height: 65px;
+  height: 60px;
   object-fit: cover;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.55;
   transition: all 0.2s ease;
 }
 
-.thumb-pic:hover,
-.thumb-pic.active {
+.mini-thumb:hover,
+.mini-thumb.active {
   opacity: 1;
-  border-color: var(--wp-cyan);
+  border-color: #FFFFFF;
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MODAL LIGHTBOX PARA O VÍDEO DO VIMEO
+   ========================================================================== */
+.vimeo-modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.vimeo-modal-backdrop.open {
+  display: flex;
+}
+
+.vimeo-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.vimeo-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.vimeo-iframe-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.vimeo-iframe-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .modules-tabs-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .panel-split-layout,
+  .panel-split-layout.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .modules-tabs-row {
+    grid-template-columns: 1fr;
+  }
+  .panel-thumbs-strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* ==========================================================================
@@ -868,7 +1127,7 @@ body.fderivs-wp-clone {
 
 .pub-card:hover {
   transform: translateY(-4px);
-  border-color: var(--wp-cyan);
+  border-color: var(--fd-cyan);
 }
 
 .pub-img-wrap {
@@ -904,7 +1163,7 @@ body.fderivs-wp-clone {
 
 .pub-date-badge span {
   font-size: 11px;
-  color: var(--wp-cyan);
+  color: var(--fd-cyan);
   text-transform: uppercase;
 }
 
@@ -923,13 +1182,13 @@ body.fderivs-wp-clone {
   text-decoration: none;
 }
 .pub-title a:hover {
-  color: var(--wp-cyan);
+  color: var(--fd-cyan);
 }
 
 /* ==========================================================================
    FALE CONOSCO (FORMULÁRIO E CONTATOS IDÊNTICOS AO WP)
    ========================================================================== */
-.contact-wp-section {
+.contact-section {
   position: relative;
   background-color: #0A131F;
   background-image: url('../images/bg-fderivs-1.jpg');
@@ -938,13 +1197,13 @@ body.fderivs-wp-clone {
   padding: 90px 0;
 }
 
-.contact-wp-overlay {
+.contact-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(10, 19, 31, 0.94);
 }
 
-.contact-wp-container {
+.contact-container {
   position: relative;
   z-index: 2;
   display: grid;
@@ -972,7 +1231,7 @@ body.fderivs-wp-clone {
 .contact-divider-line {
   width: 50px;
   height: 2px;
-  background-color: var(--wp-cyan);
+  background-color: var(--fd-cyan);
   margin-bottom: 20px;
 }
 
@@ -1038,12 +1297,12 @@ body.fderivs-wp-clone {
 }
 
 .social-circle-btn:hover {
-  background-color: var(--wp-cyan);
+  background-color: var(--fd-cyan);
   color: #000000;
 }
 
 /* Card do Formulário */
-.wp-form-card {
+.form-card {
   background: #121E2E;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
@@ -1061,23 +1320,23 @@ body.fderivs-wp-clone {
   margin-bottom: 16px;
 }
 
-.wp-input,
-.wp-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   background: #0A131F;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   padding: 12px 16px;
   color: #FFFFFF;
-  font-family: var(--wp-font-main);
+  font-family: var(--fd-font-main);
   font-size: 14px;
   transition: border-color 0.2s ease;
 }
 
-.wp-input:focus,
-.wp-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
-  border-color: var(--wp-cyan);
+  border-color: var(--fd-cyan);
 }
 
 .error-msg {
@@ -1109,9 +1368,9 @@ body.fderivs-wp-clone {
 }
 
 /* ==========================================================================
-   FOOTER (IDÊNTICO AO WORDPRESS)
+   RODAPÉ (FOOTER)
    ========================================================================== */
-.wp-footer {
+.site-footer {
   background-color: #020100;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 24px 0;
@@ -1216,7 +1475,7 @@ body.fderivs-wp-clone {
     grid-template-columns: 1fr;
   }
 
-  .contact-wp-container {
+  .contact-container {
     grid-template-columns: 1fr;
   }
 

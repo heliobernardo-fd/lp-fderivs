@@ -370,7 +370,7 @@ body.fderivs-wp-clone {
   background-position: top right;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 130px 0 100px; /* 130px para compensar a navbar fixa transparente */
+  padding: 130px 0 100px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -378,10 +378,12 @@ body.fderivs-wp-clone {
   display: flex;
   position: relative;
   z-index: 2;
+  max-width: 1320px;
 }
 
 .hero-text-col {
-  max-width: 820px; /* Largura para acomodar as 3 linhas perfeitas */
+  width: 65%; /* Largura exata do Elementor: --width: 65% */
+  max-width: 860px;
 }
 
 .hero-subtitle-tag {
@@ -394,19 +396,20 @@ body.fderivs-wp-clone {
 }
 
 .hero-main-title {
-  font-size: 35px;
-  line-height: 1.25;
+  font-size: 32px; /* Reduzido de 35px para 32px para fechar perfeitamente em 3 linhas sem quebrar */
+  line-height: 1.28;
   font-weight: 700;
   margin-bottom: 24px;
+  max-width: 780px;
 }
 
 .hero-description p {
-  font-size: 14px;
+  font-size: 13px; /* Tamanho exato e legível do Elementor */
   font-weight: 400;
   color: #BEBEBE;
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: 32px;
-  max-width: 600px; /* Alinhado ao bloco de texto do print */
+  max-width: 760px; /* Largura expandida para caber em 4 linhas naturais */
 }
 
 .hero-description strong {
@@ -420,7 +423,7 @@ body.fderivs-wp-clone {
 }
 
 .hero-actions .btn-elementor {
-  font-size: 13px;
+  font-size: 12.5px;
   letter-spacing: 0.04em;
   padding: 12px 24px;
 }

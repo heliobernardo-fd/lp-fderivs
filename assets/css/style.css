@@ -90,14 +90,26 @@ body.fderivs-wp-clone {
    HEADER / NAVBAR (IDÊNTICO AO WORDPRESS ELEMENTOR 1:1)
    ========================================================================== */
 .wp-header {
-  position: sticky;
+  position: fixed; /* Fixo no topo sobre o hero */
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 9999;
-  background-color: #0A131F;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* 0% opacidade / 100% transparência no topo */
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  padding: 12px 0;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+/* Estado com scroll ativo: 84% de opacidade (#0A131FD6) com leve blur de vidro */
+.wp-header.scrolled {
+  background-color: rgba(10, 19, 31, 0.84); /* Exatamente 84% de opacidade */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
   padding: 8px 0;
-  transition: all 0.3s ease;
 }
 
 .header-inner {
@@ -358,7 +370,7 @@ body.fderivs-wp-clone {
   background-position: top right;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 60px 0 100px;
+  padding: 130px 0 100px; /* 130px para compensar a navbar fixa transparente */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 

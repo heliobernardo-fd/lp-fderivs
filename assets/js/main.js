@@ -6,6 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Menu Mobile
   const menuToggle = document.getElementById('menuToggle');
   const siteNav = document.getElementById('siteNav');
+  const header = document.getElementById('header');
+
+  // Efeito dinâmico de opacidade na navbar:
+  // No topo: 0% de opacidade (100% transparente)
+  // Ao rolar (> 20px): 84% de opacidade
+  function handleHeaderScroll() {
+    if (header) {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  handleHeaderScroll(); // Executa na carga inicial caso já comece scrollado
 
   if (menuToggle && siteNav) {
     menuToggle.addEventListener('click', () => {
